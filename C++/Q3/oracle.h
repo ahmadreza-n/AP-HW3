@@ -6,14 +6,14 @@
 
 class COracle
 {
-  private:
-    std::string name;
-  public:
-    COracle() = default;
-    COracle(std::string name_);
-    bool marry(CHuman *, CHuman *);
-    void setChild(CHuman *, CHuman *, CHuman *);
-    
+private:
+  std::string name;
+
+public:
+  COracle() = default;
+  COracle(std::string name_);
+  bool marry(CHuman *, CHuman *);
+  void setChild(CHuman *, CHuman *, CHuman *);
 };
 
 #endif //ORACLE_H

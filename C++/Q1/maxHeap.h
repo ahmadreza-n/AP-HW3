@@ -1,15 +1,18 @@
 #if !defined(MAXHEAP_H)
 #define MAXHEAP_H
 
-#include<vector>
+#include <vector>
 
 class CMaxHeap
 {
-private:
+  private:
     std::vector<int> maxHeap;
     int n;
-public:
+
+  public:
     CMaxHeap();
+    CMaxHeap(const int[], int size);
+    CMaxHeap(const std::vector<int>);
     ~CMaxHeap();
 
     void buildMaxHeap();
@@ -25,7 +28,6 @@ public:
 
     void print();
     void heapSort();
-
 };
 
 #endif //MAXHEAP_H

@@ -8,6 +8,26 @@ CMaxHeap::CMaxHeap()
     n = 0;
 }
 
+CMaxHeap::CMaxHeap(const int arr[], int size) : n{size}
+{
+    maxHeap.push_back(0);
+    for (int i = 0; i < size; i++)
+        maxHeap.push_back(arr[i]);
+
+    buildMaxHeap();
+}
+
+CMaxHeap::CMaxHeap(const std::vector<int> vec) : n{static_cast<int>(vec.size())}
+{
+    maxHeap.push_back(0);
+    for (int i = 0; i < n; i++)
+    {
+        maxHeap.push_back(vec[i]);
+    }
+
+    buildMaxHeap();
+}
+
 CMaxHeap::~CMaxHeap()
 {
 }
@@ -100,16 +120,17 @@ void CMaxHeap::heapSort()
 {
     std::vector<int> temp;
     int temp2{};
-    while(n > 0) {
+    while (n > 0)
+    {
         temp2 = this->deleteMax();
         temp.push_back(temp2);
         std::cout << temp2 << ", ";
     }
 
-    for(size_t i = 0; i < temp.size(); i++)
+    for (size_t i = 0; i < temp.size(); i++)
         this->add(temp[i]);
-    
+
     buildMaxHeap();
-    
+
     std::cout << std::endl;
 }
